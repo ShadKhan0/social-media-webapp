@@ -3,7 +3,7 @@
 @tailwind utilities;
 :root {
   --heading:#1a1d23;
-  --primary:#4039a6;}
+  --secondary:#4039a6;}
   
 @layer base {
   :root {

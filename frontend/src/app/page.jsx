@@ -5,7 +5,6 @@ import Hero from '../components/Hero'
 import { AuroraBackground } from "../components/ui/aurora-background";
 import { MacbookScroll } from "../components/ui/macbook-scroll";
 
-
 import Link from "next/link";
 const Home = () => {
   return (
@@ -248,7 +247,7 @@ const Home = () => {
 
             <a
               href="#"
-              style={{backgroundColor:'var(--primary)'}}
+              style={{backgroundColor:'var(--secondary)'}}
               className="mt-8 inline-block rounded-full border px-12 py-3 text-sm font-medium text-white focus:outline-none focus:ring active:bg-indigo-500"
             >
               Get Started

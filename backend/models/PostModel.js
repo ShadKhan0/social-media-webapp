@@ -9,10 +9,10 @@
 const {Schema, model} = require("../connection")
 const mySchema = new Schema({
     title:String,
-    image:String,
+    image:{type:String, default:null},
     description:{type:String, default:"No description"},
     user:String,
-    likes:Number,
+    likes:{type:Number, default:0},
     comments:{type:Number, default:0},
     shares:{type:Number, default:0},
     createdAt:{type:Date, default:Date.now},

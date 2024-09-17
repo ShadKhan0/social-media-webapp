@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const Model = require('../models/CommunityModel')
+const Model = require('../models/CommunityModel');
+const Post = require('../models/PostModel')
 
 router.post("/add", (req,res) => {
     new Model(req.body)
@@ -13,6 +14,8 @@ router.post("/add", (req,res) => {
       res.status(500).json(err);
     });
 });
+
+
 router.get("/getall",(req,res) =>{
     Model.find().then((result) => {
         res.status(200).json(result)
@@ -23,6 +26,7 @@ router.get("/getall",(req,res) =>{
         
     });
 })
+
 router.get("/getbyid/:id", (req,res) => {
     Model.findById(req.params.id).then((result) => {
         res.status(200).json(result)

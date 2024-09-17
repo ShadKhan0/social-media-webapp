@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const Model = require('../models/PostModel')
-
 router.post("/add", (req,res) => {
     new Model(req.body)
     .save()
@@ -31,6 +30,18 @@ router.get("/getbyid/:id", (req,res) => {
         res.status(500).json(err);
     });
 })
+router.get('/dashboard/:id',(req, res) => {
+  Model.find({ community: req.params.id }).populate('community').then((result) => {
+    res.status(200).json(result)
+  }).catch((err) => {
+    console.log(err);
+    res.status(500).json(err)
+    
+  }); // Adjust to your schema
+     
+   
+     
+})
 router.get("/getbyuser/:user" ,(req,res) =>{
     Model.find({user: req.params.user}).then((result) => {
         res.status(200).json(result)
@@ -59,4 +70,7 @@ router.put("/update/:id", (req,res) =>{
             
         });
 })
+// Example Express.js route
+
+  
 module.exports = router;

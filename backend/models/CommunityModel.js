@@ -5,7 +5,7 @@
 const {Schema, model}= require('../connection')
 const mySchema = new Schema({
     title:String,
-    image:String,
+    image:{type:String, default:null},
     description:{type:String, default:"No description"},
     createdAt:{type:Date, default:Date.now},
 })
